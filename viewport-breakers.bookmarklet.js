@@ -21,7 +21,7 @@
       name = [name, element.className.replace(' ', '.')].join('.');
     }
     
-    var matchingElements = d.body.querySelectorAll(name);
+    var matchingElements = d.body.querySelectorAll(name.replace(/\//g, '\\/'));
     
     if (matchingElements && matchingElements.length > 1) {
       var index = -1;
