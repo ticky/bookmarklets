@@ -1,6 +1,6 @@
 (function(d){
   
-  var deviceIsAppleiOS = (navigator.userAgent.toLowerCase().match(/ip(?:hone|(?:o|a)d)/g).length > 0);
+  var deviceIsAppleiOS = (navigator.userAgent.toLowerCase().match(/ip(?:hone|(?:o|a)d)/g) !== null);
 
   function isDocumentWiderThanViewport() {
     return d.width > d.documentElement.clientWidth;
@@ -17,13 +17,13 @@
       name = [name, element.id].join('#');
     }
     
-    if (element.classList.length > 0) {
+    if (element.classList && element.classList.length > 0) {
       name = [name, element.className.replace(' ', '.')].join('.');
     }
     
     var matchingElements = d.body.querySelectorAll(name);
     
-    if (matchingElements.length > 1) {
+    if (matchingElements && matchingElements.length > 1) {
       var index = -1;
       
       for (var i = 0; i < matchingElements.length; i++) {
@@ -41,14 +41,14 @@
     var elements = d.body.querySelectorAll('*'),
       elementList = [];
     
-    for (var i = 0; i < elements.length; i++) {
-      if (isElementOutsideViewport(elements[i])) {
-        elements[i].style.outline = '1px solid pink';
-        elementList.push(generateNameFromElement(elements[i]));
+    if (elements) {
+      for (var i = 0; i < elements.length; i++) {
+        if (isElementOutsideViewport(elements[i])) {
+          elements[i].style.outline = '1px solid pink';
+          elementList.push(generateNameFromElement(elements[i]));
+        }
       }
     }
-    
-    console.log(elementList.length);
     
     if (elementList.length > 0) {
       alert([['⚠', elementList.length.toString(), 'elements appear to overflow the page;'].join(' '), elementList.join('\n • ')].join('\n • '));
