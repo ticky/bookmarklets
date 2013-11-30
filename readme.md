@@ -23,3 +23,7 @@ Quickly grabs important meta content from the current page, including;
 * Keywords
 
 _*Note*: Requires a browser which has `document.querySelectorAll`._
+
+### Viewport Breakers
+
+Bookmarklet to detect elements which force the page outside the viewport.
