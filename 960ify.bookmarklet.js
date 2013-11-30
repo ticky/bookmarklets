@@ -1,4 +1,4 @@
-javascript:(function(bodyEl){
+(function(bodyEl){
 
 	bodyEl.style.margin = '0 auto';
 	bodyEl.style.width = '960px';

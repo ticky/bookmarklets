@@ -1,4 +1,4 @@
-javascript:(function(metaTags){
+(function(metaTags){
 
 	var outputList = ["Meta Snooper:"];
 
