@@ -45,4 +45,4 @@ javascript:!function(a){function c(){return a.width>a.documentElement.clientWidt
 
 ## Legal
 
-Copyright © 2013 Geoff Stokes. Please see `license.txt`.
+Copyright © 2013 Jessica Stokes. Please see `license.txt`.
